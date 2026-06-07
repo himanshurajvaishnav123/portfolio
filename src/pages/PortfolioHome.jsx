@@ -167,14 +167,14 @@ function PortfolioHome() {
             {/* HOME */}
             <section
                 id="home"
-                className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden pt-20"
+                className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-[60px]"
             >
 
                 <div className="absolute w-80 h-80 bg-cyan-500 opacity-20 blur-3xl rounded-full top-20 left-10 animate-pulse"></div>
 
                 <div className="absolute w-80 h-80 bg-blue-500 opacity-20 blur-3xl rounded-full bottom-20 right-10 animate-pulse"></div>
 
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-bounce">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-bounce">
                     Welcome To My Portfolio
                 </h1>
 
@@ -182,23 +182,35 @@ function PortfolioHome() {
                     I create innovative and user-friendly digital solutions designed
                     to simplify everyday tasks. Passionate about web development,
                     UI design, and building modern applications.
+
                 </p>
+                <button
+                    onClick={() => {
+                        window.scrollBy({
+                            top: 600,
+                            behavior: "smooth",
+                        });
+                    }}
+                    className="mt-14 flex flex-col items-center cursor-pointer group"
+                >
 
-                <button onClick={() => {
-                    document.getElementById("about").scrollIntoView({
-                        behavior: "smooth",
-                    });
-                }} className="mt-10 px-8 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 transition duration-300 shadow-[0_0_25px_rgba(34,211,238,0.8)] hover:scale-110" >
-                    Explore More
+                    <span className="text-gray-400 text-sm mb-3 group-hover:text-cyan-400 transition duration-300">
+                        Explore More
+                    </span>
+
+                    <div className="w-10 h-16 border-2 border-cyan-400 rounded-full flex justify-center items-start p-2 shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:shadow-[0_0_30px_rgba(34,211,238,0.9)] transition duration-300">
+
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce mt-1"></div>
+
+                    </div>
+
                 </button>
-
             </section>
 
+
             {/* ABOUT */}
-            <section
-                id="about"
-                className="relative py-28 px-6 overflow-hidden"
-            >
+            <section    id="about" className="relative py-28 px-6 scroll-mt-16 md:scroll-mt-24" >
+             
 
                 <div className="absolute w-96 h-96 bg-cyan-500 opacity-10 blur-3xl rounded-full left-0"></div>
 
@@ -233,7 +245,7 @@ function PortfolioHome() {
                                     behavior: "smooth",
                                 });
                             }} >
-                            Know More
+                            Go to Projects
                         </button>
 
                     </div>
@@ -243,11 +255,7 @@ function PortfolioHome() {
 
 
             {/* PROJECTS SECTION */}
-            <section
-                id="projects"
-                className="py-28 px-6 relative overflow-hidden"
-            >
-
+            <section id="projects"   className="py-28 px-6 relative overflow-hidden">
                 {/* Glow */}
                 <div className="absolute w-96 h-96 bg-cyan-500 opacity-10 blur-3xl rounded-full right-0"></div>
 
@@ -467,9 +475,7 @@ function PortfolioHome() {
                         </div>
 
 
-                        <div className="bg-gradient-to-br from-purple-600/20 to-purple-900/20 
-p-8 rounded-2xl shadow-2xl border border-purple-500 w-[320px]
-hover:scale-105 duration-300 text-center">
+                        <div className="bg-gradient-to-br from-purple-600/20 to-purple-900/20 p-8 rounded-2xl shadow-2xl border border-purple-500 w-[320px] hover:scale-105 duration-300 text-center">
 
                             <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
                                 Pricing
@@ -619,6 +625,20 @@ hover:scale-105 duration-300 text-center">
                             </div>
 
                         </div>
+
+                    </div>
+                    <div className="flex justify-center mt-10">
+
+                        <button
+                            className="px-7 py-3 bg-cyan-500 rounded-full   hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(34,211,238,0.8)] hover:shadow-[0_0_30px_rgba(34,211,238,1)] font-semibold"
+                            onClick={() => {
+                                document.getElementById("home")?.scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
+                            ↑ Back To Top
+                        </button>
 
                     </div>
 
