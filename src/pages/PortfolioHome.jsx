@@ -465,7 +465,7 @@ function PortfolioHome() {
                             </p>
 
                             <p className="text-4xl font-bold text-cyan-400 mt-6">
-                                ₹999+
+                                ₹4999+
                             </p>
 
                             <p className="text-gray-400 mt-2">
@@ -490,7 +490,7 @@ function PortfolioHome() {
                             </p>
 
                             <p className="text-4xl font-bold text-purple-400 mt-6">
-                                ₹3,000+
+                                ₹9999+
                             </p>
 
                             <p className="text-gray-400 mt-2">
