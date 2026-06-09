@@ -17,6 +17,13 @@ function PortfolioHome() {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+    const originalPrice = 9999;
+
+const getDiscountPrice = (price, discountPercent) => {
+  return Math.round(price - (price * discountPercent) / 100);
+};
+
+const discountedPrice = getDiscountPrice(originalPrice, 50);
 
     const handleSendEmail = (e) => {
         e.preventDefault();
@@ -475,29 +482,21 @@ function PortfolioHome() {
                         </div>
 
 
-                        <div className="bg-gradient-to-br from-purple-600/20 to-purple-900/20 p-8 rounded-2xl shadow-2xl border border-purple-500 w-[320px] hover:scale-105 duration-300 text-center">
+                        <div className="mt-6">
 
-                            <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-                                Pricing
-                            </span>
+  <p className="text-gray-500 line-through text-xl">
+    ₹{originalPrice}+
+  </p>
 
-                            <h3 className="text-2xl font-bold text-purple-300 mt-5 mb-4">
-                                Full Stack MERN
-                            </h3>
+  <p className="text-4xl font-bold text-purple-400">
+    ₹{discountedPrice}+
+  </p>
 
-                            <p className="text-gray-300 leading-7">
-                                Complete MERN applications with backend, database, APIs and authentication.
-                            </p>
+  <span className="inline-block mt-2 px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold">
+    50% OFF
+  </span>
 
-                            <p className="text-4xl font-bold text-purple-400 mt-6">
-                                ₹9999+
-                            </p>
-
-                            <p className="text-gray-400 mt-2">
-                                Starting Price
-                            </p>
-
-                        </div>
+</div>
 
 
                     </div>
