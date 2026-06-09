@@ -482,19 +482,39 @@ const discountedPrice = getDiscountPrice(originalPrice, 50);
                         </div>
 
 
-                        <div className="mt-6">
+                        <div className="bg-gradient-to-br from-purple-600/20 to-purple-900/20 p-8 rounded-2xl shadow-2xl border border-purple-500 w-[320px] hover:scale-105 duration-300 text-center">
 
-  <p className="text-gray-500 line-through text-xl">
-    ₹{originalPrice}+
-  </p>
+    <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+        Pricing
+    </span>
 
-  <p className="text-4xl font-bold text-purple-400">
-    ₹{discountedPrice}+
-  </p>
+    <h3 className="text-2xl font-bold text-purple-300 mt-5 mb-4">
+        Full Stack MERN
+    </h3>
 
-  <span className="inline-block mt-2 px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold">
-    50% OFF
-  </span>
+    <p className="text-gray-300 leading-7">
+        Complete MERN applications with backend, database, APIs and authentication.
+    </p>
+
+    <div className="mt-6">
+
+        <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
+            50% OFF
+        </span>
+
+        <p className="text-gray-500 line-through text-xl mt-3">
+            ₹9999+
+        </p>
+
+        <p className="text-4xl font-bold text-purple-400">
+            ₹4999+
+        </p>
+
+    </div>
+
+    <p className="text-gray-400 mt-2">
+        Starting Price
+    </p>
 
 </div>
 
