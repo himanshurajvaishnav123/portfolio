@@ -17,13 +17,6 @@ function PortfolioHome() {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-    const originalPrice = 9999;
-
-const getDiscountPrice = (price, discountPercent) => {
-  return Math.round(price - (price * discountPercent) / 100);
-};
-
-const discountedPrice = getDiscountPrice(originalPrice, 50);
 
     const handleSendEmail = (e) => {
         e.preventDefault();
@@ -216,8 +209,8 @@ const discountedPrice = getDiscountPrice(originalPrice, 50);
 
 
             {/* ABOUT */}
-            <section    id="about" className="relative py-28 px-6 scroll-mt-16 md:scroll-mt-24" >
-             
+            <section id="about" className="relative py-28 px-6 scroll-mt-16 md:scroll-mt-24" >
+
 
                 <div className="absolute w-96 h-96 bg-cyan-500 opacity-10 blur-3xl rounded-full left-0"></div>
 
@@ -262,7 +255,7 @@ const discountedPrice = getDiscountPrice(originalPrice, 50);
 
 
             {/* PROJECTS SECTION */}
-            <section id="projects"   className="py-28 px-6 relative overflow-hidden">
+            <section id="projects" className="py-28 px-6 relative overflow-hidden">
                 {/* Glow */}
                 <div className="absolute w-96 h-96 bg-cyan-500 opacity-10 blur-3xl rounded-full right-0"></div>
 
@@ -456,7 +449,6 @@ const discountedPrice = getDiscountPrice(originalPrice, 50);
                     </div>
                     <div className="md:col-span-3 flex flex-wrap justify-center gap-8 mt-10">
 
-
                         <div className="bg-gradient-to-br from-cyan-600/20 to-cyan-900/20 p-8 rounded-2xl shadow-2xl border border-cyan-500 w-[320px] hover:scale-105 duration-300 text-center">
 
                             <span className="bg-cyan-500 text-black px-4 py-1 rounded-full text-sm font-bold">
@@ -471,9 +463,21 @@ const discountedPrice = getDiscountPrice(originalPrice, 50);
                                 Responsive websites using React.js, JavaScript and Tailwind CSS.
                             </p>
 
-                            <p className="text-4xl font-bold text-cyan-400 mt-6">
-                                ₹4999+
-                            </p>
+                            <div className="mt-6">
+
+                                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
+                                    50% OFF
+                                </span>
+
+                                <p className="text-gray-500 line-through text-xl mt-3">
+                                    ₹4999+
+                                </p>
+
+                                <p className="text-4xl font-bold text-cyan-400">
+                                    ₹2499+
+                                </p>
+
+                            </div>
 
                             <p className="text-gray-400 mt-2">
                                 Starting Price
@@ -484,40 +488,39 @@ const discountedPrice = getDiscountPrice(originalPrice, 50);
 
                         <div className="bg-gradient-to-br from-purple-600/20 to-purple-900/20 p-8 rounded-2xl shadow-2xl border border-purple-500 w-[320px] hover:scale-105 duration-300 text-center">
 
-    <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-        Pricing
-    </span>
+                            <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                                Pricing
+                            </span>
 
-    <h3 className="text-2xl font-bold text-purple-300 mt-5 mb-4">
-        Full Stack MERN
-    </h3>
+                            <h3 className="text-2xl font-bold text-purple-300 mt-5 mb-4">
+                                Full Stack MERN
+                            </h3>
 
-    <p className="text-gray-300 leading-7">
-        Complete MERN applications with backend, database, APIs and authentication.
-    </p>
+                            <p className="text-gray-300 leading-7">
+                                Complete MERN applications with backend, database, APIs and authentication.
+                            </p>
 
-    <div className="mt-6">
+                            <div className="mt-6">
 
-        <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
-            50% OFF
-        </span>
+                                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
+                                    50% OFF
+                                </span>
 
-        <p className="text-gray-500 line-through text-xl mt-3">
-            ₹9999+
-        </p>
+                                <p className="text-gray-500 line-through text-xl mt-3">
+                                    ₹9999+
+                                </p>
 
-        <p className="text-4xl font-bold text-purple-400">
-            ₹4999+
-        </p>
+                                <p className="text-4xl font-bold text-purple-400">
+                                    ₹4999+
+                                </p>
 
-    </div>
+                            </div>
 
-    <p className="text-gray-400 mt-2">
-        Starting Price
-    </p>
+                            <p className="text-gray-400 mt-2">
+                                Starting Price
+                            </p>
 
-</div>
-
+                        </div>
 
                     </div>
 
