@@ -1,11 +1,4 @@
 import React, { useState, useRef } from 'react'; // Added useRef here
-import {
-  FaInstagram,
-  FaLinkedin,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaBriefcase,
-} from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; // Added emailjs import as wellx
 
@@ -599,285 +592,143 @@ function PortfolioHome() {
 
             </section>
 
-           {/* CONTACT SECTION */}
-<section
-    id="contact"
-    className="relative py-28 px-6 overflow-hidden"
->
+            {/* CONTACT SECTION */}
+            <section
+                id="contact"
+                className="relative py-28 px-6 overflow-hidden"
+            >
 
-    {/* Glow Background */}
-    <div className="absolute w-80 h-80 bg-cyan-500 opacity-10 blur-3xl rounded-full left-10"></div>
+                {/* Glow Background */}
+                <div className="absolute w-80 h-80 bg-cyan-500 opacity-10 blur-3xl rounded-full left-10"></div>
 
-    <div className="max-w-6xl mx-auto">
+                <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-cyan-400 text-center mb-16">
-            Contact Me
-        </h2>
+                    <h2 className="text-5xl font-bold text-cyan-400 text-center mb-16">
+                        Contact Me
+                    </h2>
 
-        <div className="grid md:grid-cols-2 gap-14 items-center">
+                    <div className="grid md:grid-cols-2 gap-14 items-center">
 
-            {/* Contact Form */}
+                        {/* Contact Form */}
+                        <div className="bg-gray-800 p-8 rounded-2xl shadow-lg">
+                            {/* Dynamic Status Notifications */}
+                            {statusMessage.text && (
+                                <div className={`text-xs font-mono p-3 rounded-lg mb-4 text-center border ${statusMessage.type === 'success'
+                                    ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'
+                                    : 'bg-rose-500/10 border-rose-500/20 text-rose-400'
+                                    }`}>
+                                    {statusMessage.text}
+                                </div>
+                            )}
 
-            <div className="bg-gray-800 p-8 rounded-2xl shadow-lg">
+                            <form ref={formRef} onSubmit={handleSendEmail} className="space-y-5">
+                                <div>
+                                    <input
+                                        type="text"
+                                        name="from_name"
+                                        placeholder="Your Name"
+                                        value={formData.from_name}
+                                        onChange={handleChange}
+                                        className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400 text-slate-200 text-sm transition-all focus:shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+                                        required
+                                    />
+                                </div>
 
-                {statusMessage.text && (
-                    <div
-                        className={`text-xs font-mono p-3 rounded-lg mb-4 text-center border ${statusMessage.type === "success"
-                                ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
-                                : "bg-rose-500/10 border-rose-500/20 text-rose-400"
-                            }`}
-                    >
-                        {statusMessage.text}
-                    </div>
-                )}
+                                <div>
+                                    <input
+                                        type="email"
+                                        name="reply_to"
+                                        placeholder="Your Email"
+                                        value={formData.reply_to}
+                                        onChange={handleChange}
+                                        className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400 text-slate-200 text-sm transition-all focus:shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+                                        required
+                                    />
+                                </div>
 
-                <form
-                    ref={formRef}
-                    onSubmit={handleSendEmail}
-                    className="space-y-5"
-                >
+                                <div>
+                                    <textarea
+                                        rows="5"
+                                        name="message"
+                                        placeholder="Your Message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400 text-slate-200 text-sm transition-all focus:shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+                                        required
+                                    ></textarea>
+                                </div>
 
-                    <input
-                        type="text"
-                        name="from_name"
-                        placeholder="Your Name"
-                        value={formData.from_name}
-                        onChange={handleChange}
-                        className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400 text-slate-200 text-sm"
-                        required
-                    />
-
-                    <input
-                        type="email"
-                        name="reply_to"
-                        placeholder="Your Email"
-                        value={formData.reply_to}
-                        onChange={handleChange}
-                        className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400 text-slate-200 text-sm"
-                        required
-                    />
-
-                    <textarea
-                        rows="5"
-                        name="message"
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-cyan-400 text-slate-200 text-sm"
-                        required
-                    ></textarea>
-
-                    <button
-                        type="submit"
-                        disabled={isSending}
-                        className="w-full py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition duration-300 shadow-[0_0_20px_rgba(34,211,238,0.5)] disabled:opacity-50"
-                    >
-                        {isSending
-                            ? "TRANSMITTING MESSAGE..."
-                            : "SEND MESSAGE"}
-                    </button>
-
-                </form>
-
-            </div>
-
-            {/* Contact Info */}
-
-            <div className="flex flex-col items-center md:items-start gap-8">
-
-                <h3 className="text-3xl font-bold">
-                    Let's Connect
-                </h3>
-
-                <p className="text-gray-400 leading-7 text-center md:text-left">
-                    Feel free to connect through social media or send a
-                    message using the contact form. I'm always open to
-                    freelance projects and collaborations.
-                </p>
-
-                <div className="space-y-5 w-full">
-
-                    <div className="flex items-center gap-4">
-
-                        <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-400 flex justify-center items-center">
-                            <FaEnvelope className="text-cyan-400 text-xl" />
+                                <button
+                                    type="submit"
+                                    disabled={isSending}
+                                    className="w-full py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold font-mono transition-all duration-300 hover:scale-[1.01] shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] disabled:opacity-50 disabled:pointer-events-none"
+                                >
+                                    {isSending ? 'TRANSMITTING MESSAGE...' : 'SEND MESSAGE'}
+                                </button>
+                            </form>
                         </div>
 
-                        <div>
-                            <p className="text-gray-500 text-sm">
-                                Email
+                        {/* Social Links */}
+                        <div className="flex flex-col items-center md:items-start gap-8">
+
+                            <h3 className="text-3xl font-semibold">
+                                Let's Connect
+                            </h3>
+
+                            <p className="text-gray-400 text-center md:text-left">
+                                Feel free to connect through social media or send a message using the form.
                             </p>
 
-                            <a
-                                href="mailto:himanshurajvaishnav@gmail.com"
-                                className="hover:text-cyan-400 transition"
-                            >
-                                himanshurajvaishnav@gmail.com
-                            </a>
+                            <div className="flex gap-6 text-4xl">
 
-                        </div>
+                                <a
+                                    href="https://www.instagram.com/himanshu_raj_vaishnav?igsh=eHpzemhocm81OHF0"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="hover:text-pink-500 transition hover:scale-125"
+                                >
+                                    <FaInstagram />
+                                </a>
 
-                    </div>
+                                <a
+                                    href="https://www.linkedin.com/in/himanshu-raj-vaishnav-a09962363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="hover:text-blue-400 transition hover:scale-125"
+                                >
+                                    <FaLinkedin />
+                                </a>
 
-                    <div className="flex items-center gap-4">
+                                <a
+                                    href="mailto:himanshurajvaishnav@gmail.com"
+                                    className="hover:text-cyan-400 transition hover:scale-125"
+                                >
+                                    <FaEnvelope />
+                                </a>
 
-                        <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-400 flex justify-center items-center">
-                            <FaMapMarkerAlt className="text-cyan-400 text-xl" />
-                        </div>
-
-                        <div>
-                            <p className="text-gray-500 text-sm">
-                                Location
-                            </p>
-
-                            <p>Rajasthan, India</p>
+                            </div>
 
                         </div>
 
                     </div>
+                    <div className="flex justify-center mt-10">
 
-                    <div className="flex items-center gap-4">
-
-                        <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-400 flex justify-center items-center">
-                            <FaBriefcase className="text-cyan-400 text-xl" />
-                        </div>
-
-                        <div>
-
-                            <p className="text-gray-500 text-sm">
-                                Availability
-                            </p>
-
-                            <p className="text-green-400">
-                                Open For Freelance
-                            </p>
-
-                        </div>
+                        <button
+                            className="px-7 py-3 bg-cyan-500 rounded-full   hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(34,211,238,0.8)] hover:shadow-[0_0_30px_rgba(34,211,238,1)] font-semibold"
+                            onClick={() => {
+                                document.getElementById("home")?.scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
+                            ↑ Back To Top
+                        </button>
 
                     </div>
 
                 </div>
 
-                {/* Social */}
-
-                <div className="flex gap-5">
-
-                    <a
-                        href="https://www.instagram.com/himanshu_raj_vaishnav?igsh=eHpzemhocm81OHF0"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-14 h-14 rounded-full border border-gray-700 flex items-center justify-center hover:bg-pink-500 hover:border-pink-500 transition duration-300"
-                    >
-                        <FaInstagram className="text-2xl" />
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/himanshu-raj-vaishnav-a09962363"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-14 h-14 rounded-full border border-gray-700 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500 transition duration-300"
-                    >
-                        <FaLinkedin className="text-2xl" />
-                    </a>
-
-                    <a
-                        href="mailto:himanshurajvaishnav@gmail.com"
-                        className="w-14 h-14 rounded-full border border-gray-700 flex items-center justify-center hover:bg-cyan-500 hover:text-black hover:border-cyan-500 transition duration-300"
-                    >
-                        <FaEnvelope className="text-2xl" />
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        {/* Back to top */}
-
-        <div className="flex justify-center mt-16">
-
-            <button
-                className="px-7 py-3 bg-cyan-500 rounded-full hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(34,211,238,0.8)]"
-                onClick={() => {
-                    document
-                        .getElementById("home")
-                        ?.scrollIntoView({
-                            behavior: "smooth",
-                        });
-                }}
-            >
-                ↑ Back To Top
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-{/* FOOTER */}
-
-<footer className="border-t border-gray-800 py-8">
-
-    <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-
-        <div>
-
-            <h3 className="text-2xl font-bold text-cyan-400">
-                Himanshu Raj Vaishnav
-            </h3>
-
-            <p className="text-gray-400 text-sm mt-2">
-                Full Stack MERN Developer
-            </p>
-
-        </div>
-
-        <div className="flex gap-5 text-2xl">
-
-            <a
-                href="https://www.instagram.com/himanshu_raj_vaishnav?igsh=eHpzemhocm81OHF0"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-pink-500 transition"
-            >
-                <FaInstagram />
-            </a>
-
-            <a
-                href="https://www.linkedin.com/in/himanshu-raj-vaishnav-a09962363"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-blue-400 transition"
-            >
-                <FaLinkedin />
-            </a>
-
-            <a
-                href="mailto:himanshurajvaishnav@gmail.com"
-                className="hover:text-cyan-400 transition"
-            >
-                <FaEnvelope />
-            </a>
-
-        </div>
-
-    </div>
-
-    <div className="text-center mt-8 border-t border-gray-800 pt-6">
-
-        <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Himanshu Raj Vaishnav. All Rights Reserved.
-        </p>
-
-        <p className="text-gray-600 text-sm mt-2">
-            Built with React • Tailwind CSS • EmailJS
-        </p>
-
-    </div>
-
-</footer>
+            </section>
         </div>
     );
 }
