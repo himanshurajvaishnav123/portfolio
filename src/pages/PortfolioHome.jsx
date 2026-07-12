@@ -237,13 +237,22 @@ function PortfolioHome() {
                 About Me
             </h2>
 
-            <p className="text-gray-300 text-lg leading-8 max-w-2xl text-justify">
-                <p className='h-2'>I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about building modern and scalable web applications.   </p>
-                <p className='h-2'>I recently completed my BCA and a MERN Stack Internship, where I worked with React.js, Node.js, Express.js and MongoDB.</p>
-             <p className='h-2'> I enjoy building business management systems, responsive dashboards, REST APIs and authentication systems that solve real-world problems. </p>  
+           <p className="text-gray-300 text-lg leading-8 max-w-2xl text-justify">
+    I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about
+    building modern and scalable web applications.
+    <br /><br />
 
-              <p className='h-2'>  I'm currently looking for freelance projects, remote opportunities and collaborations where I can help businesses build reliable web solutions. </p>
-            </p>
+    I recently completed my BCA and a MERN Stack Internship, where I worked
+    with React.js, Node.js, Express.js and MongoDB.
+    <br /><br />
+
+    I enjoy building business management systems, responsive dashboards,
+    REST APIs and authentication systems that solve real-world problems.
+    <br /><br />
+
+    I'm currently looking for freelance projects, remote opportunities and
+    collaborations where I can help businesses build reliable web solutions.
+</p>
 
             {/* Highlights */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 max-w-2xl text-gray-300">
