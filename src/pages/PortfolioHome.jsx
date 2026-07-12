@@ -241,15 +241,12 @@ function PortfolioHome() {
     I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about
     building modern and scalable web applications.
     
-
     I recently completed my BCA and a MERN Stack Internship, where I worked
     with React.js, Node.js, Express.js and MongoDB.
     
-
     I enjoy building business management systems, responsive dashboards,
     REST APIs and authentication systems that solve real-world problems.
     
-
     I'm currently looking for freelance projects, remote opportunities and
     collaborations where I can help businesses build reliable web solutions.
 </p>
