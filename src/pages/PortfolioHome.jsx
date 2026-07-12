@@ -240,7 +240,8 @@ function PortfolioHome() {
             <p className="text-gray-300 text-lg leading-8 max-w-2xl text-justify">
                 <p>I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about building modern and scalable web applications.   </p>
                 <p>I recently completed my BCA and a MERN Stack Internship, where I worked with React.js, Node.js, Express.js and MongoDB.</p>
-             <p>I'm currently looking for freelance projects and remote opportunities to build reliable web solutions.</p>
+                I enjoy building business management systems, responsive dashboards, REST APIs and authentication systems that solve real-world problems.
+
                 I'm currently looking for freelance projects, remote opportunities and collaborations where I can help businesses build reliable web solutions.
             </p>
 
@@ -279,7 +280,26 @@ function PortfolioHome() {
  
 
             </div>
-
+{/* Skills */}
+<div className="flex flex-wrap gap-3 mt-8">
+    {[
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JavaScript",
+        "Tailwind CSS",
+        "Git",
+        "REST API",
+    ].map((skill) => (
+        <span
+            key={skill}
+            className="px-4 py-2 rounded-full border border-cyan-400 bg-cyan-500/10 text-cyan-300 text-sm font-medium hover:bg-cyan-500 hover:text-black transition duration-300 cursor-default"
+        >
+            {skill}
+        </span>
+    ))}
+</div>
     
             <button
                 className="mt-8 px-7 py-3 bg-cyan-500 rounded-full hover:scale-105 transition shadow-[0_0_20px_rgba(34,211,238,0.8)]"
