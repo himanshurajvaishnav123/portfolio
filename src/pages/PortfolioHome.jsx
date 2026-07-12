@@ -279,7 +279,11 @@ function PortfolioHome() {
                     <span>📍</span>
                     <span>India</span>
                 </div>
-                {/* Skills */}
+ 
+
+            </div>
+
+                           {/* Skills */}
 <div className="flex flex-wrap gap-3 mt-8">
     {[
         "React",
@@ -299,8 +303,6 @@ function PortfolioHome() {
         </span>
     ))}
 </div>
-
-            </div>
 
             <button
                 className="mt-8 px-7 py-3 bg-cyan-500 rounded-full hover:scale-105 transition shadow-[0_0_20px_rgba(34,211,238,0.8)]"
