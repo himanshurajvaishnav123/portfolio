@@ -175,14 +175,16 @@ function PortfolioHome() {
                 <div className="absolute w-80 h-80 bg-blue-500 opacity-20 blur-3xl rounded-full bottom-20 right-10 animate-pulse"></div>
 
                 <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-bounce">
-                    Welcome To My Portfolio
+                    Hi, I'm
+
+                    Himanshu Raj Vaishnav
                 </h1>
 
                 <p className="text-gray-300 text-lg md:text-xl max-w-3xl leading-8 text-justify">
-                    I create innovative and user-friendly digital solutions designed
-                    to simplify everyday tasks. Passionate about web development,
-                    UI design, and building modern applications.
-
+                    I build modern web applications,
+                    business management systems,
+                    and scalable backend solutions
+                    using React, Node.js and MongoDB.
                 </p>
                 <button
                     onClick={() => {
@@ -208,52 +210,93 @@ function PortfolioHome() {
             </section>
 
 
-            {/* ABOUT */}
-            <section id="about" className="relative py-28 px-6 scroll-mt-16 md:scroll-mt-24" >
+          {/* ABOUT */}
+<section id="about" className="relative py-28 px-6 scroll-mt-16 md:scroll-mt-24">
 
+    <div className="absolute w-96 h-96 bg-cyan-500 opacity-10 blur-3xl rounded-full left-0"></div>
 
-                <div className="absolute w-96 h-96 bg-cyan-500 opacity-10 blur-3xl rounded-full left-0"></div>
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
 
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        {/* Image */}
+        <div className="flex justify-center animate-slideLeft">
+            <img
+                src={myPhoto}
+                alt="Profile"
+                className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full border-4 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.7)] hover:scale-105 duration-500"
+            />
+        </div>
 
+        {/* Text */}
+        <div className="text-center md:text-left animate-slideLeft delay-200">
 
-                    {/* Image */}
-                    <div className="flex justify-center animate-slideLeft">
-                        <img
-                            src={myPhoto}
-                            alt="Profile"
-                            className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full border-4 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.7)] hover:scale-105 duration-500"
-                        />
-                    </div>
+            <small className="inline-block px-4 py-2 mb-4 text-sm font-semibold uppercase tracking-[2px] text-cyan-300 border border-cyan-400 rounded-full bg-cyan-500/10 shadow-[0_0_15px_rgba(34,211,238,0.25)]">
+                Full Stack MERN Developer
+            </small>
 
+            <h2 className="text-5xl font-bold text-cyan-400 mb-6">
+                About Me
+            </h2>
 
-                    {/* Text */}
-                    <div className="text-center md:text-left animate-slideLeft delay-200">
+            <p className="text-gray-300 text-lg leading-8 max-w-2xl text-justify">
+                I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about building modern, scalable and user-friendly web applications.
 
-                        <h2 className="text-5xl font-bold text-cyan-400 mb-6">
-                            About Me
-                        </h2>
+                I recently completed my BCA and a MERN Stack Internship, where I gained hands-on experience developing full-stack applications using React.js, Node.js, Express.js and MongoDB.
 
-                        <p className="text-gray-300 text-lg leading-8 max-w-2xl text-justify">
-                            Hello! My name is Himanshu Raj Vaishnav, and I am a passionate Full Stack Developer with strong knowledge of modern web development technologies. I have experience working with full development technologies and successfully completed a MERN Stack internship from June 16, 2025, to August 25, 2025. I recently completed my Bachelor of Computer Applications (BCA), with my final college examination held on May 22, 2026. I enjoy building responsive websites, modern applications, and solving real-world problems using technology while continuously improving my skills through projects and practical learning.
+                I enjoy building business management systems, responsive dashboards, REST APIs and authentication systems that solve real-world problems.
 
-                        </p>
+                I'm currently looking for freelance projects, remote opportunities and collaborations where I can help businesses build reliable web solutions.
+            </p>
 
-                        <button className="mt-8 px-7 py-3 bg-cyan-500 rounded-full hover:scale-105 transition shadow-[0_0_20px_rgba(34,211,238,0.8)]"
-                            onClick={() => {
-                                document.getElementById("projects").scrollIntoView({
-                                    behavior: "smooth",
-                                });
-                            }} >
-                            Go to Projects
-                        </button>
+            {/* Highlights */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 max-w-2xl text-gray-300">
 
-                    </div>
-
+                <div className="flex items-center gap-2">
+                    <span>🎓</span>
+                    <span>BCA Graduate</span>
                 </div>
-            </section>
 
+                <div className="flex items-center gap-2">
+                    <span>💼</span>
+                    <span>MERN Internship</span>
+                </div>
 
+                <div className="flex items-center gap-2">
+                    <span>🚀</span>
+                    <span>3+ Projects</span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <span>⚛</span>
+                    <span>MERN Stack</span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <span>🌍</span>
+                    <span>Open To Freelance</span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <span>📍</span>
+                    <span>India</span>
+                </div>
+
+            </div>
+
+            <button
+                className="mt-8 px-7 py-3 bg-cyan-500 rounded-full hover:scale-105 transition shadow-[0_0_20px_rgba(34,211,238,0.8)]"
+                onClick={() => {
+                    document.getElementById("projects").scrollIntoView({
+                        behavior: "smooth",
+                    });
+                }}
+            >
+                Explore My Projects
+            </button>
+
+        </div>
+
+    </div>
+</section>
             {/* PROJECTS SECTION */}
             <section id="projects" className="py-28 px-6 relative overflow-hidden">
                 {/* Glow */}
