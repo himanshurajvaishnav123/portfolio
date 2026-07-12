@@ -315,7 +315,7 @@ function PortfolioHome() {
                     });
                 }}
             >
-                Explore My Projects
+                Explore My Projects ➡️
             </button>
 
         </div>
