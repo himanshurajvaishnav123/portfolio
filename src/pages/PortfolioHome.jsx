@@ -279,6 +279,26 @@ function PortfolioHome() {
                     <span>📍</span>
                     <span>India</span>
                 </div>
+                {/* Skills */}
+<div className="flex flex-wrap gap-3 mt-8">
+    {[
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JavaScript",
+        "Tailwind CSS",
+        "Git",
+        "REST API",
+    ].map((skill) => (
+        <span
+            key={skill}
+            className="px-4 py-2 rounded-full border border-cyan-400 bg-cyan-500/10 text-cyan-300 text-sm font-medium hover:bg-cyan-500 hover:text-black transition duration-300 cursor-default"
+        >
+            {skill}
+        </span>
+    ))}
+</div>
 
             </div>
 
