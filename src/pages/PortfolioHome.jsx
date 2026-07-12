@@ -238,11 +238,11 @@ function PortfolioHome() {
             </h2>
 
             <p className="text-gray-300 text-lg leading-8 max-w-2xl text-justify">
-                <p>I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about building modern and scalable web applications.   </p>
-                <p>I recently completed my BCA and a MERN Stack Internship, where I worked with React.js, Node.js, Express.js and MongoDB.</p>
-                I enjoy building business management systems, responsive dashboards, REST APIs and authentication systems that solve real-world problems.
+                <p className='h-2'>I'm Himanshu Raj Vaishnav, a Full Stack MERN Developer passionate about building modern and scalable web applications.   </p>
+                <p className='h-2'>I recently completed my BCA and a MERN Stack Internship, where I worked with React.js, Node.js, Express.js and MongoDB.</p>
+             <p className='h-2'> I enjoy building business management systems, responsive dashboards, REST APIs and authentication systems that solve real-world problems. </p>  
 
-                I'm currently looking for freelance projects, remote opportunities and collaborations where I can help businesses build reliable web solutions.
+              <p className='h-2'>  I'm currently looking for freelance projects, remote opportunities and collaborations where I can help businesses build reliable web solutions. </p>
             </p>
 
             {/* Highlights */}
@@ -679,7 +679,31 @@ function PortfolioHome() {
                                 Feel free to connect through social media or send a message using the form.
                             </p>
 
-                            <div className="flex gap-6 text-4xl">
+                           
+                        </div>
+
+                    </div>
+                    <div className="flex justify-center mt-10">
+
+                        <button
+                            className="px-7 py-3 bg-cyan-500 rounded-full   hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(34,211,238,0.8)] hover:shadow-[0_0_30px_rgba(34,211,238,1)] font-semibold"
+                            onClick={() => {
+                                document.getElementById("home")?.scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
+                            ↑ Back To Top
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <footer>
+                 <div className="flex gap-6 text-4xl">
 
                                 <a
                                     href="https://www.instagram.com/himanshu_raj_vaishnav?igsh=eHpzemhocm81OHF0"
@@ -708,27 +732,7 @@ function PortfolioHome() {
 
                             </div>
 
-                        </div>
-
-                    </div>
-                    <div className="flex justify-center mt-10">
-
-                        <button
-                            className="px-7 py-3 bg-cyan-500 rounded-full   hover:scale-105 transition duration-300 shadow-[0_0_20px_rgba(34,211,238,0.8)] hover:shadow-[0_0_30px_rgba(34,211,238,1)] font-semibold"
-                            onClick={() => {
-                                document.getElementById("home")?.scrollIntoView({
-                                    behavior: "smooth",
-                                });
-                            }}
-                        >
-                            ↑ Back To Top
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </section>
+            </footer>
         </div>
     );
 }
