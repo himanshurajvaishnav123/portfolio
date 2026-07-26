@@ -66,3 +66,17 @@ body{
 .animate-fadeIn {
   animation: fadeIn .7s ease;
 }
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.35;
+  }
+}
+
+.animate-lighting {
+  animation: floatGlow 6s ease-in-out infinite;
+}
