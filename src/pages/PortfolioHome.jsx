@@ -62,60 +62,59 @@ function PortfolioHome() {
         <div className="min-h-screen bg-gray-900 text-white">
 
             {/* NAVBAR WITH GLASSMORPHISM & LIGHTING ACCENTS */}
-<header className="fixed top-0 left-0 w-full z-50">
-    <nav className="h-[70px] bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex items-center justify-between px-6 md:px-12 relative z-50">
+            <header className="fixed top-0 left-0 w-full z-50">
+                <nav className="h-[70px] bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex items-center justify-between px-6 md:px-12 relative z-50">
 
-        {/* Logo */}
-        <a href="#home" className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-300 drop-shadow-[0_0_15px_rgba(34,211,238,0.4)] hover:scale-105 transition-transform duration-300">
-            Portfolio<span className="text-cyan-400">.</span>
-        </a>
-
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-sm font-mono tracking-wider uppercase text-slate-300">
-            {["home", "about", "projects", "services", "contact"].map((item) => (
-                <li key={item}>
-                    <a 
-                        href={`#${item}`} 
-                        className="relative py-2 hover:text-cyan-400 transition-colors duration-300 group"
-                    >
-                        {item.charAt(0).toUpperCase() + item.slice(1)}
-                        {/* Hover Underline Glow */}
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] group-hover:w-full transition-all duration-300" />
+                    {/* Logo */}
+                    <a href="#home" className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-300 drop-shadow-[0_0_15px_rgba(34,211,238,0.4)] hover:scale-105 transition-transform duration-300">
+                        Portfolio<span className="text-cyan-400">.</span>
                     </a>
-                </li>
-            ))}
-        </ul>
 
-        {/* Mobile Button */}
-        <button
-            aria-label="Toggle Menu"
-            className="md:hidden text-2xl text-cyan-400 focus:outline-none p-2 rounded-lg bg-slate-900 border border-slate-800 shadow-[0_0_15px_rgba(34,211,238,0.2)] active:scale-95 transition duration-300"
-            onClick={() => setMenuOpen(!menuOpen)}
-        >
-            {menuOpen ? "✕" : "☰"}
-        </button>
-    </nav>
+                    {/* Desktop Menu */}
+                    <ul className="hidden md:flex items-center gap-8 text-sm font-mono tracking-wider uppercase text-slate-300">
+                        {["home", "about", "projects", "services", "contact"].map((item) => (
+                            <li key={item}>
+                                <a
+                                    href={`#${item}`}
+                                    className="relative py-2 hover:text-cyan-400 transition-colors duration-300 group"
+                                >
+                                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                                    {/* Hover Underline Glow */}
+                                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] group-hover:w-full transition-all duration-300" />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
 
-    {/* Mobile Menu Overlay */}
-    <div 
-        className={`fixed top-[70px] left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-cyan-500/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col items-center gap-6 text-base font-mono tracking-wider uppercase text-slate-200 md:hidden z-40 overflow-hidden transition-all duration-500 ease-in-out ${
-            menuOpen
-                ? "max-h-[400px] opacity-100 py-8 translate-y-0"
-                : "max-h-0 opacity-0 py-0 -translate-y-8 pointer-events-none"
-        }`}
-    >
-        {["home", "about", "projects", "services", "contact"].map((item) => (
-            <a
-                key={item}
-                href={`#${item}`}
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-cyan-400 transition-all duration-300 hover:scale-110 active:scale-95"
-            >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-            </a>
-        ))}
-    </div>
-</header>
+                    {/* Mobile Button */}
+                    <button
+                        aria-label="Toggle Menu"
+                        className="md:hidden text-2xl text-cyan-400 focus:outline-none p-2 rounded-lg bg-slate-900 border border-slate-800 shadow-[0_0_15px_rgba(34,211,238,0.2)] active:scale-95 transition duration-300"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        {menuOpen ? "✕" : "☰"}
+                    </button>
+                </nav>
+
+                {/* Mobile Menu Overlay */}
+                <div
+                    className={`fixed top-[70px] left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-cyan-500/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col items-center gap-6 text-base font-mono tracking-wider uppercase text-slate-200 md:hidden z-40 overflow-hidden transition-all duration-500 ease-in-out ${menuOpen
+                            ? "max-h-[400px] opacity-100 py-8 translate-y-0"
+                            : "max-h-0 opacity-0 py-0 -translate-y-8 pointer-events-none"
+                        }`}
+                >
+                    {["home", "about", "projects", "services", "contact"].map((item) => (
+                        <a
+                            key={item}
+                            href={`#${item}`}
+                            onClick={() => setMenuOpen(false)}
+                            className="hover:text-cyan-400 transition-all duration-300 hover:scale-110 active:scale-95"
+                        >
+                            {item.charAt(0).toUpperCase() + item.slice(1)}
+                        </a>
+                    ))}
+                </div>
+            </header>
             {/* HOME / HERO SECTION WITH DYNAMIC LIGHTING & BOUNCE EFFECT */}
             <section
                 id="home"
